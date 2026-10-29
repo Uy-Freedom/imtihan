@@ -3,676 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>«العربية بين يديك» 1-3 بۆلۈم ئونلاين ئىمتىھانى</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
-                        },
-                        arabic: {
-                            navy: '#1e293b',
-                            gold: '#d97706',
-                            emerald: '#059669',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Noto Sans Arabic', 'UKij Tuz', 'ALKatip Basma', 'sans-serif'],
-                        arabic: ['Amiri', 'Noto Sans Arabic', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <title>العربية بين يديك - 1-قىسىم ئىمتىھانى</title>
     <style>
-        body {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            min-height: 100vh;
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2980b9;
+            --accent-color: #f39c12;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
         }
-        .arabic-text {
-            font-family: 'Amiri', serif;
+        body {
+            font-family: 'Al Mushaf', 'Traditional Arabic', 'Amiri', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
             line-height: 1.8;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 6px solid var(--primary-color);
         }
-        .custom-shadow {
-            box-shadow: 0 10px 25px -5px rgba(15, 118, 110, 0.08), 0 8px 10px -6px rgba(15, 118, 110, 0.05);
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
-        /* Style radio buttons */
-        .option-btn {
-            transition: all 0.2s ease-in-out;
+        .header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 26px;
         }
-        .option-btn:hover {
+        .header p {
+            margin: 5px 0;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .student-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            background: #ebf5fb;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .student-info input {
+            border: 1px solid #bdc3c7;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-family: inherit;
+            width: 250px;
+        }
+        .section-title {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fafafa;
+            border-right: 4px solid var(--secondary-color);
+            border-radius: 4px;
+        }
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+        input[type="text"].answer-input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .options label {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eaf2f8;
+        }
+        .footer-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #d68910;
             transform: translateY(-2px);
+        }
+        .channel-tag {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #95a5a6;
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 pb-16 antialiased">
+<body>
 
-    <!-- Top Sticky Navigation & Header -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
-            <div class="flex items-center space-x-3 space-x-reverse">
-                <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
-                    <i class="fa-solid font-arabic">ع</i>
-                </div>
-                <div>
-                    <h1 class="font-bold text-lg md:text-xl text-slate-900 leading-tight">«العربية بين يديك» 1-3 بۆلۈم ئىمتىھانى</h1>
-                    <p class="text-xs text-brand-700 font-medium">ئاساسىي ئەرەب تىلى · 100 نۇمۇر ئۆلچەملىك ئونلاين سىناق</p>
-                </div>
-            </div>
-
-            <!-- Stats Header Widgets -->
-            <div class="flex items-center space-x-4 space-x-reverse text-sm">
-                <div class="bg-brand-50 border border-brand-100 px-3 py-1.5 rounded-lg flex items-center space-x-2 space-x-reverse">
-                    <i class="fa-regular fa-clock text-brand-600"></i>
-                    <span class="text-slate-600">قالغان ۋاقىت:</span>
-                    <span id="timer" class="font-bold text-brand-800 font-mono text-base">90:00</span>
-                </div>
-                <div class="bg-amber-50 border border-amber-100 px-3 py-1.5 rounded-lg flex items-center space-x-2 space-x-reverse">
-                    <i class="fa-solid fa-trophy text-amber-500"></i>
-                    <span class="text-slate-600">ئومۇمىي:</span>
-                    <span class="font-bold text-amber-700">100 نۇمۇر</span>
-                </div>
-            </div>
-        </div>
-        <!-- Progress Bar -->
-        <div class="w-full bg-slate-100 h-1.5">
-            <div id="quizProgress" class="bg-brand-500 h-1.5 transition-all duration-300 w-0"></div>
-        </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-4 mt-6">
-
-        <!-- Student Information Card -->
-        <section class="glass-card rounded-2xl p-6 mb-8 custom-shadow border-t-4 border-t-brand-600">
-            <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center space-x-2 space-x-reverse">
-                <i class="fa-solid fa-user-graduate text-brand-600"></i>
-                <span>ئوقۇغۇچى ئۇچۇرىنى توشۇڭ</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">ئوقۇغۇچى ئىسمى-فامىلىسى *</label>
-                    <input type="text" id="studentName" placeholder="ئىسمىڭىزنى يېزىڭ..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">سىنىپى / گۇرۇپپىسى</label>
-                    <input type="text" id="studentGroup" placeholder="مەس: 1-سىنىپ" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">ئىمتىھان كۈنى</label>
-                    <input type="text" id="examDate" readonly class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-500 text-sm">
-                </div>
-            </div>
-        </section>
-
-        <!-- EXAM FORM -->
-        <form id="examForm" onsubmit="event.preventDefault(); submitExam();">
-
-            <!-- SECTION 1 -->
-            <section class="glass-card rounded-2xl p-6 md:p-8 mb-8 custom-shadow">
-                <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">1</span>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-lg">بىرىنچى بۆلۈم: سۆز-ئالغۇ ۋە لۇغەت بىلىملىرى</h3>
-                            <p class="text-xs text-slate-500">الجزء الأول: المفردات والمعجم</p>
-                        </div>
-                    </div>
-                    <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-bold rounded-full border border-brand-200">20 نۇمۇر</span>
-                </div>
-
-                <!-- Q1.1 Arabic to Uyghur -->
-                <div class="mb-8">
-                    <h4 class="font-semibold text-slate-800 text-sm mb-4 flex items-center space-x-2 space-x-reverse">
-                        <span class="w-2 h-2 rounded-full bg-brand-500"></span>
-                        <span>1. تۆۋەندىكى ئەرەبچە سۆزلەرنىڭ توغرا ئۇيغۇرچە تەرجىمىسىنى تاللاڭ (10 نۇمۇر):</span>
-                    </h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Item 1 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-bold text-lg text-slate-900 arabic-text mb-2">1. طَالِبَةٌ</label>
-                            <select name="v_1" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- توغرا تەرجىمىنى تاللاڭ --</option>
-                                <option value="correct">ئوقۇغۇچى (ئايال)</option>
-                                <option value="wrong1">ئوقۇتقۇچى (ئايال)</option>
-                                <option value="wrong2">دوختۇر (ئايال)</option>
-                            </select>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-bold text-lg text-slate-900 arabic-text mb-2">2. جِنْسِيَّةٌ</label>
-                            <select name="v_2" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- توغرا تەرجىمىنى تاللاڭ --</option>
-                                <option value="wrong1">ئىسمى</option>
-                                <option value="correct">مىللىتى / تەۋەلىكى</option>
-                                <option value="wrong2">خىزمىتى</option>
-                            </select>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-bold text-lg text-slate-900 arabic-text mb-2">3. شَقَّةٌ</label>
-                            <select name="v_3" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- توغرا تەرجىمىنى تاللاڭ --</option>
-                                <option value="correct">پارتىرا / ئۆي</option>
-                                <option value="wrong1">مەكتەپ</option>
-                                <option value="wrong2">مەھەللە</option>
-                            </select>
-                        </div>
-                        <!-- Item 4 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-bold text-lg text-slate-900 arabic-text mb-2">4. غُرْفَةُ النَّوْمِ</label>
-                            <select name="v_4" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- توغرا تەرجىمىنى تاللاڭ --</option>
-                                <option value="wrong1">مېھمانخانا</option>
-                                <option value="wrong2">ئاشخانا</option>
-                                <option value="correct">ياتاق ئۆي</option>
-                            </select>
-                        </div>
-                        <!-- Item 5 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-bold text-lg text-slate-900 arabic-text mb-2">5. أَثَاثٌ</label>
-                            <select name="v_5" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- توغرا تەرجىمىنى تاللاڭ --</option>
-                                <option value="correct">ئۆي جاھازلىرى</option>
-                                <option value="wrong1">كىيىم-كېچەك</option>
-                                <option value="wrong2">ئېلېكتر سايمانلىرى</option>
-                            </select>
-                        </div>
-                        <!-- Item 6 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-bold text-lg text-slate-900 arabic-text mb-2">6. صَبَاحُ الْخَيْرِ</label>
-                            <select name="v_6" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- توغرا تەرجىمىنى تاللاڭ --</option>
-                                <option value="wrong1">خەيرلىك كەچ</option>
-                                <option value="correct">خەيرلىك ئەتىگەن</option>
-                                <option value="wrong2">خۇش كەپسىز</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Q1.2 Uyghur to Arabic -->
-                <div>
-                    <h4 class="font-semibold text-slate-800 text-sm mb-4 flex items-center space-x-2 space-x-reverse">
-                        <span class="w-2 h-2 rounded-full bg-brand-500"></span>
-                        <span>2. تۆۋەندىكى ئۇيغۇرچە سۆزلەرنىڭ توغرا ئەرەبچىسىنى تاللاڭ (10 نۇمۇر):</span>
-                    </h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-semibold text-slate-800 mb-2">1. دوختۇر (ئەر)</label>
-                            <select name="v_ar_1" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm arabic-text focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- اختر الترجمة الصحيحة --</option>
-                                <option value="correct">طَبِيبٌ</option>
-                                <option value="wrong1">مُهَنْدِسٌ</option>
-                                <option value="wrong2">مُدَرِّسٌ</option>
-                            </select>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <label class="block font-semibold text-slate-800 mb-2">2. بەشىنچى قەۋەت</label>
-                            <select name="v_ar_2" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm arabic-text focus:ring-2 focus:ring-brand-500 outline-none">
-                                <option value="">-- اختر الترجمة الصحيحة --</option>
-                                <option value="wrong1">الدَّوْرُ الأَوَّلُ</option>
-                                <option value="correct">الدَّوْرُ الْخَامِسُ</option>
-                                <option value="wrong2">الدَّوْرُ الثَّالِثُ</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 2 -->
-            <section class="glass-card rounded-2xl p-6 md:p-8 mb-8 custom-shadow">
-                <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">2</span>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-lg">ئىككىنچى بۆلۈم: گرامماتىكا ۋە جۈملە قۇراشتۇرۇش</h3>
-                            <p class="text-xs text-slate-500">الجزء الثاني: القواعد والتراكيب</p>
-                        </div>
-                    </div>
-                    <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-bold rounded-full border border-brand-200">20 نۇمۇر</span>
-                </div>
-
-                <!-- Grammar 2.1 -->
-                <div class="mb-8">
-                    <h4 class="font-semibold text-slate-800 text-sm mb-4">1. بوش ئورۇنلارغا ماس كېلىدىغان توغرا ئالماش ياكى ئىشارەت ئىسمىنى تاللاڭ (10 نۇمۇر):</h4>
-                    <div class="space-y-4">
-                        <!-- Item 1 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-wrap items-center justify-between gap-3">
-                            <span class="font-bold text-lg text-slate-900 arabic-text">1. ( ......... ) أَخِي، ( ......... ) مُهَنْدِسٌ.</span>
-                            <div class="flex gap-2">
-                                <select name="g_1" class="p-2 bg-white rounded-lg border border-slate-300 text-sm arabic-text focus:ring-2 focus:ring-brand-500">
-                                    <option value="">-- تاللاڭ --</option>
-                                    <option value="correct">هَذَا / هُوَ</option>
-                                    <option value="wrong1">هَذِهِ / هِيَ</option>
-                                    <option value="wrong2">هَذَا / هِيَ</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-wrap items-center justify-between gap-3">
-                            <span class="font-bold text-lg text-slate-900 arabic-text">2. ( ......... ) أُخْتِي، ( ......... ) طَالِبَةٌ.</span>
-                            <div class="flex gap-2">
-                                <select name="g_2" class="p-2 bg-white rounded-lg border border-slate-300 text-sm arabic-text focus:ring-2 focus:ring-brand-500">
-                                    <option value="">-- تاللاڭ --</option>
-                                    <option value="wrong1">هَذَا / هُوَ</option>
-                                    <option value="correct">هَذِهِ / هِيَ</option>
-                                    <option value="wrong2">هَذِهِ / هُوَ</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-wrap items-center justify-between gap-3">
-                            <span class="font-bold text-lg text-slate-900 arabic-text">3. مَا هَذِهِ؟ ( ......... ) ثَلَّاجَةٌ.</span>
-                            <div class="flex gap-2">
-                                <select name="g_3" class="p-2 bg-white rounded-lg border border-slate-300 text-sm arabic-text focus:ring-2 focus:ring-brand-500">
-                                    <option value="">-- تاللاڭ --</option>
-                                    <option value="wrong1">هَذَا</option>
-                                    <option value="correct">هَذِهِ</option>
-                                    <option value="wrong2">هُوَ</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grammar 2.2 Reordering -->
-                <div>
-                    <h4 class="font-semibold text-slate-800 text-sm mb-4">2. بەرگەن سۆزلەرنىڭ توغرا رەت تەرتىپىدىكى جۈملىسىنى تاللاڭ (10 نۇمۇر):</h4>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <p class="font-bold text-base text-brand-800 arabic-text mb-2">سۆزلەر: ( فِي - أَنَا - مَصْنَعٍ - أَعْمَلُ )</p>
-                            <div class="space-y-2">
-                                <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                    <input type="radio" name="g_order_1" value="wrong" class="text-brand-600 focus:ring-brand-500">
-                                    <span class="text-sm arabic-text">أَنَا فِي مَصْنَعٍ أَعْمَلُ.</span>
-                                </label>
-                                <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                    <input type="radio" name="g_order_1" value="correct" class="text-brand-600 focus:ring-brand-500">
-                                    <span class="text-sm font-semibold arabic-text">أَنَا أَعْمَلُ فِي مَصْنَعٍ.</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                            <p class="font-bold text-base text-brand-800 arabic-text mb-2">سۆزلەر: ( الشَّقَّةِ - فِي - غُرَفٍ - خَمْسُ )</p>
-                            <div class="space-y-2">
-                                <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                    <input type="radio" name="g_order_2" value="correct" class="text-brand-600 focus:ring-brand-500">
-                                    <span class="text-sm font-semibold arabic-text">فِي الشَّقَّةِ خَمْسُ غُرَفٍ.</span>
-                                </label>
-                                <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                    <input type="radio" name="g_order_2" value="wrong" class="text-brand-600 focus:ring-brand-500">
-                                    <span class="text-sm arabic-text">خَمْسُ الشَّقَّةِ فِي غُرَفٍ.</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 3 -->
-            <section class="glass-card rounded-2xl p-6 md:p-8 mb-8 custom-shadow">
-                <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">3</span>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-lg">أۈچىنچى بۆلۈم: سۆزلىشىش تولۇقلاش</h3>
-                            <p class="text-xs text-slate-500">الجزء الثالث: الحوار والتعبير</p>
-                        </div>
-                    </div>
-                    <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-bold rounded-full border border-brand-200">20 نۇمۇر</span>
-                </div>
-
-                <div class="bg-amber-50/60 border border-amber-200 rounded-xl p-4 md:p-6">
-                    <h4 class="text-xs font-bold text-amber-800 mb-4 uppercase tracking-wider">سۆزلىشىش روللىرى: طَارِق (طارىق) ۋە عَلِيّ (ئالىي)</h4>
-                    
-                    <div class="space-y-4 text-base arabic-text">
-                        <div class="flex items-start space-x-3 space-x-reverse">
-                            <span class="font-bold text-slate-700 min-w-[70px]">طَارِق :</span>
-                            <span class="text-slate-900">السَّلَامُ عَلَيْكُمْ.</span>
-                        </div>
-
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <span class="font-bold text-brand-700 min-w-[70px]">عَلِيّ :</span>
-                            <select name="dialog_1" class="p-2 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500">
-                                <option value="">-- بوش ئورۇننى تولۇقلاڭ --</option>
-                                <option value="correct">وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</option>
-                                <option value="wrong1">أَهْلًا وَسَهْلًا</option>
-                                <option value="wrong2">صَبَاحُ الْخَيْرِ</option>
-                            </select>
-                        </div>
-
-                        <div class="flex items-start space-x-3 space-x-reverse">
-                            <span class="font-bold text-slate-700 min-w-[70px]">طَارِق :</span>
-                            <span class="text-slate-900">اسْمِي طَارِقٌ، مَا اسْمُكَ؟</span>
-                        </div>
-
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <span class="font-bold text-brand-700 min-w-[70px]">عَلِيّ :</span>
-                            <select name="dialog_2" class="p-2 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500">
-                                <option value="">-- بوش ئورۇننى تولۇقلاڭ --</option>
-                                <option value="correct">اسْمِي عَلِيٌّ</option>
-                                <option value="wrong1">أَنَا بِخَيْرٍ</option>
-                                <option value="wrong2">أَنَا مِنْ تُرْكِيَا</option>
-                            </select>
-                        </div>
-
-                        <div class="flex items-start space-x-3 space-x-reverse">
-                            <span class="font-bold text-slate-700 min-w-[70px]">طَارِق :</span>
-                            <span class="text-slate-900">كَيْفَ حَالُكَ؟</span>
-                        </div>
-
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <span class="font-bold text-brand-700 min-w-[70px]">عَلِيّ :</span>
-                            <select name="dialog_3" class="p-2 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500">
-                                <option value="">-- بوش ئورۇننى تولۇقلاڭ --</option>
-                                <option value="wrong1">وَالْحَمْدُ لِلَّهِ هُوَ طَالِبٌ</option>
-                                <option value="correct">بِخَيْرٍ، وَالْحَمْدُ لِلَّهِ</option>
-                                <option value="wrong2">شُكْرًا جَزِيلًا</option>
-                            </select>
-                        </div>
-
-                        <div class="flex items-start space-x-3 space-x-reverse">
-                            <span class="font-bold text-slate-700 min-w-[70px]">طَارِق :</span>
-                            <span class="text-slate-900">مِنْ أَيْنَ أَنْتَ؟</span>
-                        </div>
-
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <span class="font-bold text-brand-700 min-w-[70px]">عَلِيّ :</span>
-                            <select name="dialog_4" class="p-2 bg-white rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500">
-                                <option value="">-- بوش ئورۇننى تولۇقلاڭ (تۈركىيەدىن) --</option>
-                                <option value="correct">أَنَا مِنْ تُرْكِيَا</option>
-                                <option value="wrong1">أَنَا تُرْكِيٌّ</option>
-                                <option value="wrong2">أَنَا فِي الْبَيْتِ</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 4 -->
-            <section class="glass-card rounded-2xl p-6 md:p-8 mb-8 custom-shadow">
-                <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">4</span>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-lg">تۆتىنچى بۆلۈم: تىكىستنى چۈشىنىش</h3>
-                            <p class="text-xs text-slate-500">الجزء الرابع: القراءة والفهم</p>
-                        </div>
-                    </div>
-                    <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-bold rounded-full border border-brand-200">20 نۇمۇر</span>
-                </div>
-
-                <!-- Text Card -->
-                <div class="bg-gradient-to-l from-slate-900 to-slate-800 text-white rounded-2xl p-6 mb-6 shadow-md border border-slate-700">
-                    <div class="flex items-center justify-between mb-3 text-brand-400 text-xs font-bold">
-                        <span><i class="fa-solid fa-book-open ml-1"></i> ئوقۇش تىكىستى (النَّصُّ)</span>
-                    </div>
-                    <p class="arabic-text text-lg md:text-xl leading-loose text-slate-100 font-medium">
-                        «هَذَا أَحْمَدُ. أَحْمَدُ طَالِبٌ جَادٌّ فِي الْجَامِعَةِ. هُوَ يَسْكُنُ فِي شَقَّةٍ جَمِيلَةٍ مَعَ أُسْرَتِهِ. فِي الشَّقَّةِ أَرْبَعُ غُرَفٍ: غُرْفَةُ النَّوْمِ، وَغُرْفَةُ الْجُلُوسِ، وَالْمَطْبَخُ، وَالْحَمَّامُ. يَسْتَيْقِظُ أَحْمَدُ عِنْدَ أَذَانِ الْفَجْرِ، وَيُصَلِّي الْفَجْرَ فِي الْمَسْجِدِ.»
-                    </p>
-                </div>
-
-                <!-- True / False -->
-                <div class="mb-6">
-                    <h4 class="font-semibold text-slate-800 text-sm mb-4">1. تىكىستكە ئاساسەن توغرا (✓) ياكى خاتا (✗) ئىكەنلىكىنى بەلگىلەڭ (10 نۇمۇر):</h4>
-                    <div class="space-y-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-4">
-                            <span class="arabic-text font-bold text-slate-800 text-base">1. أَحْمَدُ مُدَرِّسٌ فِي الْمَدْرَسَةِ.</span>
-                            <div class="flex items-center space-x-2 space-x-reverse shrink-0">
-                                <label class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 cursor-pointer text-sm">
-                                    <input type="radio" name="tf_1" value="correct_false" class="ml-1"> ✗ خاتا
-                                </label>
-                                <label class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 cursor-pointer text-sm">
-                                    <input type="radio" name="tf_1" value="wrong" class="ml-1"> ✓ توغرا
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-4">
-                            <span class="arabic-text font-bold text-slate-800 text-base">2. يَسْكُنُ أَحْمَدُ فِي شَقَّةٍ جَمِيلَةٍ.</span>
-                            <div class="flex items-center space-x-2 space-x-reverse shrink-0">
-                                <label class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 cursor-pointer text-sm">
-                                    <input type="radio" name="tf_2" value="wrong" class="ml-1"> ✗ خاتا
-                                </label>
-                                <label class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 cursor-pointer text-sm">
-                                    <input type="radio" name="tf_2" value="correct_true" class="ml-1"> ✓ توغرا
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-4">
-                            <span class="arabic-text font-bold text-slate-800 text-base">3. يُصَلِّي أَحْمَدُ الْفَجْرَ فِي الْمَسْجِدِ.</span>
-                            <div class="flex items-center space-x-2 space-x-reverse shrink-0">
-                                <label class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 cursor-pointer text-sm">
-                                    <input type="radio" name="tf_3" value="wrong" class="ml-1"> ✗ خاتا
-                                </label>
-                                <label class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 cursor-pointer text-sm">
-                                    <input type="radio" name="tf_3" value="correct_true" class="ml-1"> ✓ توغرا
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Text Q&A Select -->
-                <div>
-                    <h4 class="font-semibold text-slate-800 text-sm mb-4">2. تىكىستتىكى سۇئالغا ئەرەبچە توغرا جاۋابنى تاللاڭ (10 نۇمۇر):</h4>
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
-                        <label class="block font-bold text-slate-900 arabic-text">أَيْنَ يَسْكُنُ أَحْمَدُ؟</label>
-                        <select name="text_q1" class="w-full p-2.5 bg-white rounded-lg border border-slate-300 text-sm arabic-text focus:ring-2 focus:ring-brand-500">
-                            <option value="">-- توغرا جاۋابنى تاللاڭ --</option>
-                            <option value="correct">يَسْكُنُ فِي شَقَّةٍ جَمِيلَةٍ مَعَ أُسْرَتِهِ.</option>
-                            <option value="wrong1">يَسْكُنُ فِي الْجَامِعَةِ.</option>
-                            <option value="wrong2">يَسْكُنُ فِي الْمَسْجِدِ.</option>
-                        </select>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 5 -->
-            <section class="glass-card rounded-2xl p-6 md:p-8 mb-8 custom-shadow">
-                <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">5</span>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-lg">بېشىنچى بۆلۈم: تەرجىمە قىلىش</h3>
-                            <p class="text-xs text-slate-500">الجزء الخامس: الترجمة المزدوجة</p>
-                        </div>
-                    </div>
-                    <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-bold rounded-full border border-brand-200">20 نۇمۇر</span>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Arabic to Uyghur -->
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                        <label class="block font-bold text-base text-slate-900 arabic-text mb-2">1. ئەرەبچە جۈملىنىڭ توغرا ئۇيغۇرچە تەرجىمىسى: "هَذِهِ أُسْرَتِي، هَذَا وَالِدِي عَدْنَانُ وَهُوَ مُهَنْدِسٌ."</label>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                <input type="radio" name="trans_1" value="correct" class="text-brand-600 focus:ring-brand-500">
-                                <span class="text-sm">بۇ مېنىڭ ئائىلەم. بۇ مېنىڭ دادام ئادنان، ئۇ بىر ئىنژېنېر.</span>
-                            </label>
-                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                <input type="radio" name="trans_1" value="wrong" class="text-brand-600 focus:ring-brand-500">
-                                <span class="text-sm">بۇ مېنىڭ ئاپام. دادام ئادنان دوختۇر.</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Uyghur to Arabic -->
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                        <label class="block font-bold text-sm text-slate-900 mb-2">2. ئۇيغۇرچە جۈملىنىڭ توغرا ئەرەبچىسى: "سىز قايسى دۆلەتتىن كەلدىڭىز؟ مەن سۇرىيەدىن كەلدىم."</label>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                <input type="radio" name="trans_2" value="wrong" class="text-brand-600 focus:ring-brand-500">
-                                <span class="text-sm arabic-text">كَيْفَ حَالُكَ؟ أَنَا مِنْ سُورِيَا.</span>
-                            </label>
-                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer">
-                                <input type="radio" name="trans_2" value="correct" class="text-brand-600 focus:ring-brand-500">
-                                <span class="text-sm font-semibold arabic-text">مِنْ أَيْنَ أَنْتَ؟ أَنَا مِنْ سُورِيَا.</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Submit Button -->
-            <div class="text-center pt-4 pb-12">
-                <button type="submit" class="px-10 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center space-x-3 space-x-reverse mx-auto">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <span>ئىمتىھاننى تاپشۇرۇش ۋە نەتىجىنى كۆرۈش</span>
-                </button>
-            </div>
-        </form>
-    </main>
-
-    <!-- Modal Report Card -->
-    <div id="resultModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm hidden p-4">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 text-center animate-bounce-short">
-            <div class="w-20 h-20 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mx-auto mb-4 text-3xl">
-                <i class="fa-solid fa-award"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-1">ئىمتىھان نەتىجىڭىز تەييار بولدى!</h3>
-            <p id="modalStudentInfo" class="text-sm text-slate-500 mb-6"></p>
-
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 mb-6">
-                <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest block mb-1">ئېرىشكەن ئومۇمىي نۇمۇرىڭىز</span>
-                <div class="flex items-baseline justify-center space-x-2 space-x-reverse">
-                    <span id="finalScore" class="text-5xl font-extrabold text-brand-600">0</span>
-                    <span class="text-xl font-bold text-slate-400">/ 100</span>
-                </div>
-                <div id="gradeBadge" class="inline-block mt-3 px-4 py-1.5 rounded-full text-xs font-bold"></div>
-            </div>
-
-            <p id="gradeMessage" class="text-sm text-slate-600 mb-6"></p>
-
-            <button onclick="closeModal()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition">
-                يېپىش ۋە جەدۋەلنى تەھلىل قىلىش
-            </button>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1>العربية بين يديك (القسم الأول)</h1>
+        <p>ئەرەب تىلى دەرسلىكى ئىمتىھانى (كېيىنكى 3 بۆلەك)</p>
+        <p>ئومۇمىي نومۇر: 100 | ۋاقتى: 45 مىنۇت</p>
     </div>
 
-    <!-- JS Logic -->
-    <script>
-        // Set Exam Date
-        document.getElementById('examDate').value = new Date().toISOString().split('T')[0];
+    <div class="student-info">
+        <div>ئوقۇغۇچىنىڭ ئىسمى: <input type="text" placeholder="ئىسمىڭىزنى يېزىڭ..."></div>
+        <div>تارىخ: <span id="current-date"></span></div>
+    </div>
 
-        // Timer Logic (90 Mins)
-        let totalSeconds = 90 * 60;
-        const timerEl = document.getElementById('timer');
-        const timerInterval = setInterval(() => {
-            if (totalSeconds <= 0) {
-                clearInterval(timerInterval);
-                alert("ئىمتىھان ۋاقتى توشتى! ئاپتوماتىك تاپشۇرۇلىدۇ.");
-                submitExam();
-            } else {
-                totalSeconds--;
-                const mins = Math.floor(totalSeconds / 60);
-                const secs = totalSeconds % 60;
-                timerEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            }
-        }, 1000);
+    <form id="examForm">
+        <!-- 1-بۆلۈم: تېكىست تولۇقلاش (20 نومۇر) -->
+        <div class="section-title">بىرىنچى بۆلۈم: بوش ئورۇنلارنى تولۇقلاش (20 نومۇر / ھەر بىرى 4 نومۇر)</div>
+        
+        <div class="question">
+            <p>1. أَنَا مِنْ تُرْكِسْتَانَ الشَّرْقِيَّةِ، وَأَنَا .......... (مەن شەرقىي تۈركىستانلىق، ۋە مەن ...)</p>
+            <input type="text" class="answer-input" placeholder="جاۋابىڭىزنى يېزىڭ...">
+        </div>
 
-        // Calculate score on submit
-        function submitExam() {
-            const studentName = document.getElementById('studentName').value.trim();
-            if (!studentName) {
-                alert("ئىمتىھاننى تاپشۇرۇشتىن ئىلگىرى ئىسمىڭىزنى يېزىڭ!");
-                document.getElementById('studentName').focus();
-                return;
-            }
+        <div class="question">
+            <p>2. هَذَا بَيْعِي، وَهُوَ .......... (بۇ مېنىڭ ئۆيۈم، ئۇ ...)</p>
+            <input type="text" class="answer-input" placeholder="جاۋابىڭىزنى يېزىڭ...">
+        </div>
 
-            let score = 0;
-            const form = document.getElementById('examForm');
-            const formData = new FormData(form);
+        <div class="question">
+            <p>3. أَسْكُنُ فِي مَدِينَةِ .......... (مەن ... شەھىرىدە ياشايمەن)</p>
+            <input type="text" class="answer-input" placeholder="جاۋابىڭىزنى يېزىڭ...">
+        </div>
 
-            // Scoring key logic (Total 100)
-            // Sec 1 Vocabulary (20 pts total)
-            if (formData.get('v_1') === 'correct') score += 3.5;
-            if (formData.get('v_2') === 'correct') score += 3.5;
-            if (formData.get('v_3') === 'correct') score += 3;
-            if (formData.get('v_4') === 'correct') score += 3;
-            if (formData.get('v_5') === 'correct') score += 3;
-            if (formData.get('v_6') === 'correct') score += 4;
+        <div class="question">
+            <p>4. أَبِي يَعْمَلُ .......... فِي الْمَدِينَةِ (دادام شەھەردە ... بولۇپ ئىشلەيدۇ)</p>
+            <input type="text" class="answer-input" placeholder="جاۋابىڭىزنى يېزىڭ...">
+        </div>
 
-            // Sec 2 Grammar (20 pts)
-            if (formData.get('g_1') === 'correct') score += 5;
-            if (formData.get('g_2') === 'correct') score += 5;
-            if (formData.get('g_3') === 'correct') score += 4;
-            if (formData.get('g_order_1') === 'correct') score += 3;
-            if (formData.get('g_order_2') === 'correct') score += 3;
+        <div class="question">
+            <p>5. صَبَاحَ .......... (خەيرلىك سەھەر / ئەتىگىنىڭىز خەيرلىك بولسۇن)</p>
+            <input type="text" class="answer-input" placeholder="جاۋابىڭىزنى يېزىڭ...">
+        </div>
 
-            // Sec 3 Dialog (20 pts)
-            if (formData.get('dialog_1') === 'correct') score += 5;
-            if (formData.get('dialog_2') === 'correct') score += 5;
-            if (formData.get('dialog_3') === 'correct') score += 5;
-            if (formData.get('dialog_4') === 'correct') score += 5;
+        <!-- 2-بۆلۈم: تەرجىمە قىلىش (ئەرەبچىدىن ئۇيغۇرچىگە ۋە ئۇيغۇرچىدىن ئەرەبچىگە) (30 نومۇر) -->
+        <div class="section-title">ئىككىنچى بۆلۈم: تەرجىمە قىلىش (30 نومۇر / ھەر بىرى 6 نومۇر)</div>
 
-            // Sec 4 Reading (20 pts)
-            if (formData.get('tf_1') === 'correct_false') score += 5;
-            if (formData.get('tf_2') === 'correct_true') score += 5;
-            if (formData.get('tf_3') === 'correct_true') score += 5;
-            if (formData.get('text_q1') === 'correct') score += 5;
+        <div class="question">
+            <p>6. تەرجىمە قىلىڭ (ئەرەبچىدىن ئۇيغۇرچىگە): «أَيْنَ تَعْمَلُ يَا أخي؟ أَعْمَلُ مُهَنْدِسًا فِي الشَّرِكَةِ»</p>
+            <input type="text" class="answer-input" placeholder="ئۇيغۇرچە تەرجىمىسى...">
+        </div>
 
-            // Sec 5 Translation (20 pts)
-            if (formData.get('trans_1') === 'correct') score += 10;
-            if (formData.get('trans_2') === 'correct') score += 10;
+        <div class="question">
+            <p>7. تەرجىمە قىلىڭ (ئەرەبچىدىن ئۇيغۇرچىگە): «هَذِهِ حُجْرَةُ الدِّرَاسَةِ، وَهِيَ وَاسِعَةٌ وَجَمِيلَةٌ»</p>
+            <input type="text" class="answer-input" placeholder="ئۇيغۇرچە تەرجىمىسى...">
+        </div>
 
-            // Display result
-            showResultModal(studentName, Math.round(score));
-        }
+        <div class="question">
+            <p>8. تەرجىمە قىلىڭ (ئەرەبچىدىن ئۇيغۇرچىگە): «كَمْ سِعْرُ هَذَا القَمِيصِ؟ سِعْرُهُ خَمْسُونَ رِيَالاً»</p>
+            <input type="text" class="answer-input" placeholder="ئۇيغۇرچە تەرجىمىسى...">
+        </div>
 
-        function showResultModal(name, score) {
-            document.getElementById('modalStudentInfo').textContent = `ئوقۇغۇچى: ${name}`;
-            document.getElementById('finalScore').textContent = score;
+        <div class="question">
+            <p>9. تەرجىمە قىلىڭ (ئۇيغۇرچىدىن ئەرەبچىگە): «بۇ مېنىڭ دوستۇم، ئۇ دوختۇر.»</p>
+            <input type="text" class="answer-input" placeholder="ئەرەبچە تەرجىمىسى...">
+        </div>
 
-            const badge = document.getElementById('gradeBadge');
-            const msg = document.getElementById('gradeMessage');
+        <div class="question">
+            <p>10. تەرجىمە قىلىڭ (ئۇيغۇرچىدىن ئەرەبچىگە): «ئاشخانا قەيەردە؟ ئاشخانا بىرىنچى قەۋەتتە.»</p>
+            <input type="text" class="answer-input" placeholder="ئەرەبچە تەرجىمىسى...">
+        </div>
 
-            if (score >= 90) {
-                badge.className = "inline-block mt-3 px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700";
-                badge.textContent = "ئەلا (متاز)";
-                msg.textContent = "مۇبارەك بولسۇن! ئەرەب تىلى ئاساسىڭىز ناھايىتى ياخشى ئىكەن.";
-            } else if (score >= 75) {
-                badge.className = "inline-block mt-3 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-100 text-blue-700";
-                badge.textContent = "ياخشى (جيد جدا)";
-                msg.textContent = "تېخىمۇ تىرىشسىڭىز ئالدىنقى سەۋىيىگە ئۆتەلەيسىز!";
-            } else if (score >= 60) {
-                badge.className = "inline-block mt-3 px-4 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-700";
-                badge.textContent = "ئۆتتى (مقبول)";
-                msg.textContent = "ئاساسىي لۇغەت ۋە گرامماتىكىلارنى يەنە بىر قېتىم تەكرارلاڭ.";
-            } else {
-                badge.className = "inline-block mt-3 px-4 py-1.5 rounded-full text-xs font-bold bg-rose-100 text-rose-700";
-                badge.textContent = "قايتا كۆرۈش لازىم";
-                msg.textContent = "ئۈمىدسىزلەنمەڭ، 1-3 بۆلۈملەرنى قايتا بىر قېتىم ئەستايىدىل تەكرارلاپ چىقىڭ.";
-            }
+        <!-- 3-بۆلۈم: تاللاش (تەڭشەش ۋە گرامماتىكا) (30 نومۇر) -->
+        <div class="section-title">ئۈچىنچى بۆلۈم: تاللاپ جاۋاب بېرىش (30 نومۇر / ھەر بىرى 6 نومۇر)</div>
 
-            document.getElementById('resultModal').classList.remove('hidden');
-        }
+        <div class="question">
+            <p>11. مەن (طَالِبٌ / طَالِبَةٌ) - ئەگەر سۆزلەۋاتقان ئادەم ئايال كىشى بولسا:</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> أ) طَالِبٌ</label>
+                <label><input type="radio" name="q11" value="b"> ب) طَالِبَةٌ</label>
+            </div>
+        </div>
 
-        function closeModal() {
-            document.getElementById('resultModal').classList.add('hidden');
-        }
-    </script>
+        <div class="question">
+            <p>12. هَذَا (صَدِيقِي / صَدِيقَتِي) - «دوستۇم» (ئوغۇل بالا ئۈچۈن):</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> أ) صَدِيقِي</label>
+                <label><input type="radio" name="q12" value="b"> ب) صَدِيقَتِي</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>13. أَيْنَ (تَسْكُنِينَ / تَسْكُنُ) يَا مَرْيَمُ؟</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> أ) تَسْكُنُ</label>
+                <label><input type="radio" name="q13" value="b"> ب) تَسْكُنِينَ</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>14. هَذِهِ (سَاعَةٌ / قَلَمٌ) جَمِيلَةٌ:</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> أ) سَاعَةٌ</label>
+                <label><input type="radio" name="q14" value="b"> ب) قَلَمٌ</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>15. كَمْ (أُسْرَةً / أُسْرَتُكَ)؟ - ئائىلىڭدەكە نەچچە كىشى بار؟</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> أ) أُسْرَةً</label>
+                <label><input type="radio" name="q15" value="b"> ب) أُسْرَتُكَ</label>
+            </div>
+        </div>
+
+        <!-- 4-بۆلۈم: تېكىستنى چۈشىنىش ۋە قىسقا جاۋاب (20 نومۇر) -->
+        <div class="section-title">تۆتىنچى بۆلۈم: تېكىست چۈشەندۈرۈش (20 نومۇر / ھەر بىرى 10 نومۇر)</div>
+
+        <div class="question">
+            <p>16. تېكىستكە قارىتا ئەرەبچە قىسقا جاۋاب يېزىڭ: «مَا جِنْسِيَّتُكَ؟» (مىللىتىڭىز نېمە؟)</p>
+            <input type="text" class="answer-input" placeholder="مثال: أَنَا تُرْكِسْتَانِيٌّ...">
+        </div>
+
+        <div class="question">
+            <p>17. تېكىستكە قارىتا ئەرەبچە قىسقا جاۋاب يېزىڭ: «مَا مِهْنَتُكَ؟» (كەسپىڭىز نېمە؟)</p>
+            <input type="text" class="answer-input" placeholder="مثال: أَنَا طَالِبٌ / مُهَنْدِسٌ...">
+        </div>
+
+        <div class="footer-submit">
+            <button type="button" class="btn" onclick="alert('سۇئاللار تاماملاندى! ئوقۇتقۇچىڭىزغا تاپشۇرۇڭ.')">جاۋابنى تاپشۇرۇش</button>
+        </div>
+    </form>
+
+    <div class="channel-tag">
+        Telegram Channel: @jawlan
+    </div>
+</div>
+
+<script>
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString('ug-CN');
+</script>
+
 </body>
 </html>
